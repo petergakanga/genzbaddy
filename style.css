@@ -1,0 +1,574 @@
+   /* Reset & Basics */
+   * {
+       margin: 0;
+       padding: 0;
+       box-sizing: border-box;
+       font-family: 'Inter', sans-serif;
+   }
+
+   body {
+       background-color: #fefefe;
+       color: #222;
+       line-height: 1.6;
+   }
+
+   a {
+       text-decoration: none;
+       color: inherit;
+   }
+
+   /* Header */
+   header {
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+       padding: 20px 50px;
+       background-color: #222;
+       color: white;
+       position: sticky;
+       top: 0;
+       z-index: 1000;
+       height: 70px;
+
+       
+   }
+
+   header .logo {
+       font-size: 1.8rem;
+       font-weight: 700;
+       letter-spacing: 2px;
+       cursor: pointer;
+   }   
+
+   nav ul {
+       display: flex;
+       gap: 25px;
+       list-style: none;
+   }
+
+   nav ul li a {
+       color: white;
+       font-weight: 500;
+       transition: 0.3s;
+   }
+
+   nav ul li a:hover {
+       color: #ff4081;
+   }
+
+   .hamburger {
+       display: none;
+       cursor: pointer;
+       flex-direction: column;
+       gap: 5px;
+   }
+
+   .hamburger div {
+       width: 25px;
+       height: 3px;
+       background: white;
+   }
+
+   /* Call number in header */
+   .call-number {
+       display: flex;
+       align-items: center;
+   }
+
+   .call-number a {
+       color: white;
+       display: inline-flex;
+       align-items: center;
+       gap: 8px;
+       background: rgba(255, 255, 255, 0.04);
+       padding: 8px 12px;
+       border-radius: 6px;
+       font-weight: 700;
+       border: 1px solid rgba(255, 255, 255, 0.06);
+   }
+
+   .call-number a svg {
+       width: 18px;
+       height: 18px;
+       color: white;
+       display: block
+   }
+
+   .call-number a:hover {
+       background: rgba(255, 255, 255, 0.06);
+   }
+
+   @media (max-width:480px) {
+       .call-number .phone-text {
+           display: none;
+       }
+
+       .call-number a {
+           padding: 8px;
+       }
+   }
+
+   /* Hero Section */
+   .hero {
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       justify-content: center;
+       text-align: center;
+       padding: 100px 20px;
+       background: linear-gradient(135deg, #ff4081, #6a00ff);
+       color: white;
+   }
+
+   .hero h1 {
+       font-size: 3rem;
+       margin-bottom: 20px;
+   }
+
+   .hero p {
+       font-size: 1.2rem;
+       margin-bottom: 30px;
+   }
+
+   .hero button {
+       padding: 12px 30px;
+       font-size: 1rem;
+       border: none;
+       border-radius: 6px;
+       background-color: white;
+       color: #ff4081;
+       cursor: pointer;
+       font-weight: 600;
+       transition: 0.3s;
+   }
+
+   .hero button:hover {
+       background-color: #ffe6f2;
+   }
+
+   /* Products Section */
+   .products {
+       padding: 80px 50px;
+       text-align: center;
+   }
+
+   .products h2 {
+       font-size: 2rem;
+       margin-bottom: 40px;
+       color: #222;
+   }
+
+   .product-slider {
+       display: flex;
+       overflow-x: auto;
+       gap: 20px;
+       scroll-behavior: smooth;
+       padding-bottom: 10px;
+   }
+
+   .product-card {
+       min-width: 220px;
+       border: 1px solid #ddd;
+       border-radius: 10px;
+       overflow: hidden;
+       background-color: white;
+       transition: 0.3s;
+       cursor: pointer;
+       position: relative;
+   }
+
+   .product-card:hover {
+       transform: scale(1.05);
+       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+   }
+
+   .product-card:focus {
+       outline: 3px solid rgba(255, 64, 129, 0.25);
+       outline-offset: 4px;
+   }
+
+   /* Offer badge + pricing */
+   .product-card .badge {
+       position: absolute;
+       left: 12px;
+       top: 12px;
+       background: #ff4081;
+       color: white;
+       padding: 6px 8px;
+       border-radius: 6px;
+       font-weight: 700;
+       font-size: 0.85rem;
+       z-index: 3
+   }
+
+   .product-card .price-row {
+       display: flex;
+       gap: 8px;
+       align-items: center;
+       margin-bottom: 8px
+   }
+
+   .product-card .price-row .old-price {
+       text-decoration: line-through;
+       color: #888;
+       font-size: 0.95rem
+   }
+
+   .product-card .price-row .new-price {
+       color: #ff4081;
+       font-weight: 700
+   }
+
+   /* Offers section */
+   .offers {
+       padding: 40px 50px;
+       text-align: center;
+       background: linear-gradient(180deg, rgba(255, 64, 129, 0.03), transparent);
+       margin-bottom: 20px
+   }
+
+   .offers h2 {
+       font-size: 1.6rem;
+       margin-bottom: 4%;
+       color: #ff4081
+   }
+
+   .offers .product-slider {
+       padding-bottom: 0
+   }
+
+   .offers .product-card {
+       min-width: 180px
+   }
+
+   @media(max-width:600px) {
+       .offers {
+           padding: 30px 20px
+       }
+
+       .offers .product-card {
+           min-width: 160px
+       }
+   }
+
+   .product-card img {
+       width: 100%;
+       height: 200px;
+       object-fit: cover;
+   }
+
+   .product-card .info {
+       padding: 15px;
+   }
+
+   .product-card .info h3 {
+       font-size: 1.1rem;
+       margin-bottom: 10px;
+   }
+
+   .product-card .info p {
+       font-size: 0.9rem;
+       margin-bottom: 15px;
+       color: #555;
+   }
+
+   .product-card .info a {
+       padding: 10px 20px;
+       background-color: #ff4081;
+       color: white;
+       border-radius: 6px;
+       font-weight: 500;
+       transition: 0.3s;
+       display: inline-block;
+   }
+
+   .product-card .info a:hover {
+       background-color: #e60073;
+   }
+
+   .product-card .info .actions {
+       display: flex;
+       gap: 10px;
+       align-items: center;
+       flex-wrap: wrap;
+   }
+
+   .product-card .info .actions a {
+       flex: 1 1 auto;
+       min-width: 0;
+       text-align: center;
+       white-space: nowrap;
+       overflow: hidden;
+       text-overflow: ellipsis;
+   }
+
+   .product-card .info .buy {
+       padding: 8px 12px;
+   }
+
+   .product-card .info .whatsapp-product {
+       display: inline-flex;
+       align-items: center;
+       gap: 8px;
+       padding: 8px 12px;
+       background: #25D366;
+       color: white;
+       border-radius: 6px;
+       font-weight: 600;
+       text-decoration: none;
+   }
+
+   .product-card .info .whatsapp-product svg {
+       width: 18px;
+       height: 18px;
+       fill: white
+   }
+
+   .product-card .info .whatsapp-product:hover {
+       filter: brightness(0.95);
+   }
+
+   /* Responsive buttons */
+   @media (max-width:600px) {
+       .product-card .info .actions a {
+           padding: 6px 8px;
+           font-size: 0.95rem;
+       }
+
+       .product-card .info .whatsapp-product svg {
+           width: 16px;
+           height: 16px;
+       }
+
+       .product-card {
+           min-width: 180px;
+       }
+   }
+
+   @media (max-width:420px) {
+       .product-card .info .actions {
+           gap: 8px;
+       }
+
+       .product-card .info .actions a {
+           padding: 6px 6px;
+           font-size: 0.9rem;
+       }
+
+       .whatsapp-btn {
+           width: 48px;
+           height: 48px;
+       }
+
+       .whatsapp-btn svg {
+           width: 22px;
+           height: 22px;
+       }
+   }
+
+   /* Categories Bar */
+   .categories {
+       display: flex;
+       gap: 10px;
+       justify-content: center;
+       margin-bottom: 20px;
+       flex-wrap: wrap;
+   }
+
+   .categories button {
+       padding: 8px 14px;
+       border-radius: 999px;
+       border: 1px solid #eee;
+       background-color: white;
+       cursor: pointer;
+       font-weight: 600;
+       transition: 0.2s;
+       color: #222;
+   }
+
+   .categories button:hover {
+       background-color: #ffe6f2;
+       color: #ff4081;
+   }
+
+   .categories button.active {
+       background-color: #ff4081;
+       color: white;
+       border-color: #ff4081;
+   }
+
+   /* WhatsApp Floating Button */
+   .whatsapp-btn {
+       position: fixed;
+       right: 20px;
+       bottom: 20px;
+       background: #25D366;
+       color: white;
+       border-radius: 50%;
+       width: 56px;
+       height: 56px;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+       z-index: 9999;
+       text-decoration: none;
+   }
+
+   .whatsapp-btn svg {
+       width: 26px;
+       height: 26px;
+       fill: white;
+   }
+
+   /* About Section */
+   .about {
+       padding: 80px 50px;
+       background-color: #f5f5f5;
+       text-align: center;
+   }
+
+   .about h2 {
+       font-size: 2rem;
+       margin-bottom: 20px;
+   }
+
+   .about p {
+       max-width: 700px;
+       margin: 0 auto;
+       color: #555;
+       line-height: 1.8;
+   }
+
+   /* Newsletter */
+   .newsletter {
+       padding: 80px 50px;
+       text-align: center;
+   }
+
+   .newsletter h2 {
+       font-size: 2rem;
+       margin-bottom: 20px;
+   }
+
+   .newsletter input {
+       padding: 12px 15px;
+       width: 250px;
+       border-radius: 6px;
+       border: 1px solid #ccc;
+       margin-right: 10px;
+   }
+
+   .newsletter button {
+       padding: 12px 20px;
+       border: none;
+       background-color: #ff4081;
+       color: white;
+       border-radius: 6px;
+       cursor: pointer;
+       font-weight: 600;
+   }
+
+   .newsletter button:hover {
+       background-color: #e60073;
+   }
+
+   /* Footer */
+   footer {
+       background-color: #222;
+       color: white;
+       padding: 30px 50px;
+       text-align: center;
+   }
+
+   footer a {
+       color: white;
+       margin: 0 10px;
+       transition: 0.3s;
+   }
+
+   footer a:hover {
+       color: #ff4081;
+   }
+
+   /* Responsive */
+   @media(max-width:768px) {
+       header {
+           flex-direction: column;
+           gap: 15px;
+       }
+
+       nav ul {
+           flex-direction: column;
+           gap: 15px;
+           display: none;
+       }
+
+       nav ul.active {
+           display: flex;
+       }
+
+       .hamburger {
+           display: flex;
+       }
+
+       .hero h1 {
+           font-size: 2.2rem;
+       }
+
+       .hero p {
+           font-size: 1rem;
+       }
+   }
+   @media (max-width: 768px) {
+    header {
+        flex-direction: row;          /* keep row */
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 20px;
+    }
+
+    nav {
+        position: absolute;
+        top: 70px;                    /* below header */
+        left: 0;
+        width: 100%;
+        background: #222;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 15px;
+        display: none;
+        padding: 20px;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .call-number {
+        margin-left: 10px;
+    }
+}
+@media (max-width: 360px) {
+    header {
+        padding: 12px 14px;
+    }
+}
+@media (max-width: 360px) {
+    .hero {
+        padding: 70px 14px;
+    }
+
+    .hero h1 {
+        font-size: 1.9rem;
+    }
+}
+html, body {
+    overflow-x: hidden;
+}

@@ -1,151 +1,346 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Product Details - GenzBaddy</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-<style>
-*{box-sizing:border-box;margin:0;padding:0;font-family:'Inter',sans-serif}
-body{background:#fff;color:#222;line-height:1.5;padding:40px}
-.header{display:flex;justify-content:space-between;align-items:center;margin-bottom:30px}
-.header .logo{font-weight:700;font-size:1.6rem}
-.header nav a{margin-left:18px;color:#222;text-decoration:none;font-weight:600}
-.container{max-width:980px;margin:0 auto;background:#fff;padding:20px;border-radius:10px;border:1px solid #eee}
-.product-detail{display:flex;gap:30px;align-items:flex-start}
-.product-detail img{width:360px;height:360px;object-fit:cover;border-radius:8px;border:1px solid #ddd}
-.product-info{flex:1}
-.product-info h1{font-size:1.8rem;margin-bottom:10px}
-.price{font-size:1.2rem;color:#ff4081;font-weight:700;margin-bottom:12px}
-.meta{color:#777;margin-bottom:12px}
-.rating{display:flex;align-items:center;gap:8px;margin-bottom:10px}
-.stars{color:#ffb400}
-.reviews-count{color:#666;font-size:.95rem}
-.description{color:#444;margin-bottom:12px}
-.options{display:flex;gap:12px;align-items:center;margin-bottom:12px}
-.select{padding:8px 10px;border:1px solid #ddd;border-radius:8px;background:#fafafa}
-.qty{display:flex;align-items:center;gap:8px}
-.qty input{width:56px;padding:8px;border:1px solid #ddd;border-radius:6px;text-align:center}
-.stock{color:#2b9348;font-weight:700}
-.out-of-stock{color:#c0392b;font-weight:700}
-.specs{margin-top:16px;border-top:1px dashed #eee;padding-top:12px}
-.specs table{width:100%;border-collapse:collapse}
-.specs td{padding:8px 6px;border-bottom:1px solid #f4f4f4;color:#444}
-.shipping, .returns{margin-top:8px;color:#555}
-.actions{display:flex;gap:12px;align-items:center;margin-top:14px}
-.btn{padding:10px 14px;border-radius:8px;font-weight:700;text-decoration:none;display:inline-block}
-.btn-primary{background:#ff4081;color:#fff}
-.btn-secondary{background:#eee;color:#222}
-.related{margin-top:26px}
-.related h3{margin-bottom:12px}
-.related-list{display:flex;gap:14px;flex-wrap:wrap}
-.related-item{width:150px;border:1px solid #eee;border-radius:8px;padding:10px;text-align:center}
-.related-item img{width:100%;height:100px;object-fit:cover;border-radius:6px}
-.notice{padding:30px;text-align:center}
-@media(max-width:900px){
-  .product-detail{flex-direction:column;align-items:center}
-  .product-detail img{width:100%;height:auto;max-width:420px}
-  .related-list{justify-content:center}
-}
-</style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Product Details - GenzBaddy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif
+        }
+
+        body {
+            background: #fff;
+            color: #222;
+            line-height: 1.5;
+            padding: 40px
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px
+        }
+
+        .header .logo {
+            font-weight: 700;
+            font-size: 1.6rem
+        }
+
+        .header nav a {
+            margin-left: 18px;
+            color: #222;
+            text-decoration: none;
+            font-weight: 600
+        }
+
+        .container {
+            max-width: 980px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #eee
+        }
+
+        .product-detail {
+            display: flex;
+            gap: 30px;
+            align-items: flex-start
+        }
+
+        .product-detail img {
+            width: 360px;
+            height: 360px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 1px solid #ddd
+        }
+
+        .product-info {
+            flex: 1
+        }
+
+        .product-info h1 {
+            font-size: 1.8rem;
+            margin-bottom: 10px
+        }
+
+        .price {
+            font-size: 1.2rem;
+            color: #ff4081;
+            font-weight: 700;
+            margin-bottom: 12px
+        }
+
+        .meta {
+            color: #777;
+            margin-bottom: 12px
+        }
+
+        .rating {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 10px
+        }
+
+        .stars {
+            color: #ffb400
+        }
+
+        .reviews-count {
+            color: #666;
+            font-size: .95rem
+        }
+
+        .description {
+            color: #444;
+            margin-bottom: 12px
+        }
+
+        .options {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            margin-bottom: 12px
+        }
+
+        .select {
+            padding: 8px 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background: #fafafa
+        }
+
+        .qty {
+            display: flex;
+            align-items: center;
+            gap: 8px
+        }
+
+        .qty input {
+            width: 56px;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            text-align: center
+        }
+
+        .stock {
+            color: #2b9348;
+            font-weight: 700
+        }
+
+        .out-of-stock {
+            color: #c0392b;
+            font-weight: 700
+        }
+
+        .specs {
+            margin-top: 16px;
+            border-top: 1px dashed #eee;
+            padding-top: 12px
+        }
+
+        .specs table {
+            width: 100%;
+            border-collapse: collapse
+        }
+
+        .specs td {
+            padding: 8px 6px;
+            border-bottom: 1px solid #f4f4f4;
+            color: #444
+        }
+
+        .shipping,
+        .returns {
+            margin-top: 8px;
+            color: #555
+        }
+
+        .actions {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            margin-top: 14px
+        }
+
+        .btn {
+            padding: 10px 14px;
+            border-radius: 8px;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-block
+        }
+
+        .btn-primary {
+            background: #ff4081;
+            color: #fff
+        }
+
+        .btn-secondary {
+            background: #eee;
+            color: #222
+        }
+
+        .related {
+            margin-top: 26px
+        }
+
+        .related h3 {
+            margin-bottom: 12px
+        }
+
+        .related-list {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap
+        }
+
+        .related-item {
+            width: 150px;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            padding: 10px;
+            text-align: center
+        }
+
+        .related-item img {
+            width: 100%;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 6px
+        }
+
+        .notice {
+            padding: 30px;
+            text-align: center
+        }
+
+        @media(max-width:900px) {
+            .product-detail {
+                flex-direction: column;
+                align-items: center
+            }
+
+            .product-detail img {
+                width: 100%;
+                height: auto;
+                max-width: 420px
+            }
+
+            .related-list {
+                justify-content: center
+            }
+        }
+    </style>
 </head>
+
 <body>
-<header class="header">
-  <div class="logo">GenzBaddy</div>
-  <nav>
-    <a href="index.html">Shop</a>
-    <a href="#about">About</a>
-    <a href="cart.html">Cart (<span id="cart-count">0</span>)</a>
-  </nav>
-</header>
+    <header class="header">
+        <div class="logo">GenzBaddy</div>
+        <nav>
+            <a href="index.html">Shop</a>
+            <a href="#about">About</a>
+            <a href="cart.html">Cart (<span id="cart-count">0</span>)</a>
+        </nav>
+    </header>
 
-<main class="container" id="main">
-  <div id="content"></div>
-</main>
+    <main class="container" id="main">
+        <div id="content"></div>
+    </main>
 
-<script>
-const products = {
-  'reusable-water-bottle':{
-    id:'reusable-water-bottle',
-    title:'Reusable Water Bottle',
-    price:'KSh 1,200',
-    category:'Home',
-    image:'download (8).jpg',
-    rating:4.6,
-    reviews:[{author:'Lina',text:'Keeps my water cool all day!',rating:5},{author:'Tony',text:'Well built and stylish',rating:4.5}],
-    stock:12,
-    variants:{color:['Blue','Green','Matte Black'],size:[]},
-    specs:{capacity:'750ml',material:'Stainless steel',insulation:'Double-wall vacuum'},
-    shipping:'Free delivery within 3-5 business days',
-    returns:'7-day returns with proof of purchase',
-    description:'A stylish, eco-friendly reusable water bottle that keeps your drinks cool and reduces single-use plastics. Perfect for everyday carry.'
-  },
-  'wireless-charger-stand':{
-    id:'wireless-charger-stand',
-    title:'Wireless Charger Stand',
-    price:'KSh 1,800',
-    category:'Tech',
-    image:'download (5).jpg',
-    rating:4.3,
-    reviews:[{author:'Sam',text:'Charges fast and looks great',rating:4}],
-    stock:5,
-    variants:{color:['White','Black'],size:[]},
-    specs:{power:'15W',compatibility:'Qi-enabled phones'},
-    shipping:'Ships in 1-2 business days',
-    returns:'14-day returns',
-    description:'A sleek wireless charger stand that keeps your desk tidy and your phone powered up quickly.'
-  },
-  'desk-organizer-kit':{
-    id:'desk-organizer-kit',
-    title:'Desk Organizer Kit',
-    price:'KSh 1,100',
-    category:'Accessories',
-    image:'download (7).jpg',
-    rating:4.1,
-    reviews:[{author:'Asha',text:'Great value for money',rating:4}],
-    stock:0,
-    variants:{color:['Grey'],size:[]},
-    specs:{pieces:'7 pieces',material:'Plastic & PU'},
-    shipping:'Free pickup; courier delivery available',
-    returns:'No returns on clearance items',
-    description:'Everything you need to organize your workspace — cable clips, pen holders, and multi-use trays.'
-  },
-  'hair-accessory-kit':{
-    id:'hair-accessory-kit',
-    title:'Hair Accessory Kit',
-    price:'KSh 650',
-    category:'Beauty',
-    image:'download (10).jpg',
-    rating:4.7,
-    reviews:[{author:'Maya',text:'Cute and durable',rating:5}],
-    stock:24,
-    variants:{color:['Assorted'],size:[]},
-    specs:{pieces:'12 pieces',material:'Fabric & Metal'},
-    shipping:'Ships same day if ordered before 2pm',
-    returns:'7-day exchange only',
-    description:'A curated set of trendy hair accessories to match any outfit and mood.'
-  }
-};
+    <script>
+        const products = {
+            'reusable-water-bottle': {
+                id: 'reusable-water-bottle',
+                title: 'Reusable Water Bottle',
+                price: 'KSh 1,200',
+                category: 'Home',
+                image: 'download (8).jpg',
+                rating: 4.6,
+                reviews: [{ author: 'Lina', text: 'Keeps my water cool all day!', rating: 5 }, { author: 'Tony', text: 'Well built and stylish', rating: 4.5 }],
+                stock: 12,
+                variants: { color: ['Blue', 'Green', 'Matte Black'], size: [] },
+                specs: { capacity: '750ml', material: 'Stainless steel', insulation: 'Double-wall vacuum' },
+                shipping: 'Free delivery within 3-5 business days',
+                returns: '7-day returns with proof of purchase',
+                description: 'A stylish, eco-friendly reusable water bottle that keeps your drinks cool and reduces single-use plastics. Perfect for everyday carry.'
+            },
+            'wireless-charger-stand': {
+                id: 'wireless-charger-stand',
+                title: 'Wireless Charger Stand',
+                price: 'KSh 1,800',
+                category: 'Tech',
+                image: 'download (5).jpg',
+                rating: 4.3,
+                reviews: [{ author: 'Sam', text: 'Charges fast and looks great', rating: 4 }],
+                stock: 5,
+                variants: { color: ['White', 'Black'], size: [] },
+                specs: { power: '15W', compatibility: 'Qi-enabled phones' },
+                shipping: 'Ships in 1-2 business days',
+                returns: '14-day returns',
+                description: 'A sleek wireless charger stand that keeps your desk tidy and your phone powered up quickly.'
+            },
+            'desk-organizer-kit': {
+                id: 'desk-organizer-kit',
+                title: 'Desk Organizer Kit',
+                price: 'KSh 1,100',
+                category: 'Accessories',
+                image: 'download (7).jpg',
+                rating: 4.1,
+                reviews: [{ author: 'Asha', text: 'Great value for money', rating: 4 }],
+                stock: 0,
+                variants: { color: ['Grey'], size: [] },
+                specs: { pieces: '7 pieces', material: 'Plastic & PU' },
+                shipping: 'Free pickup; courier delivery available',
+                returns: 'No returns on clearance items',
+                description: 'Everything you need to organize your workspace — cable clips, pen holders, and multi-use trays.'
+            },
+            'hair-accessory-kit': {
+                id: 'hair-accessory-kit',
+                title: 'Hair Accessory Kit',
+                price: 'KSh 650',
+                category: 'Beauty',
+                image: 'download (10).jpg',
+                rating: 4.7,
+                reviews: [{ author: 'Maya', text: 'Cute and durable', rating: 5 }],
+                stock: 24,
+                variants: { color: ['Assorted'], size: [] },
+                specs: { pieces: '12 pieces', material: 'Fabric & Metal' },
+                shipping: 'Ships same day if ordered before 2pm',
+                returns: '7-day exchange only',
+                description: 'A curated set of trendy hair accessories to match any outfit and mood.'
+            }
+        };
 
-function getParam(name){
-  const params = new URLSearchParams(location.search);
-  return params.get(name);
-}
+        function getParam(name) {
+            const params = new URLSearchParams(location.search);
+            return params.get(name);
+        }
 
-const contentEl = document.getElementById('content');
-const id = getParam('product');
-const phone = '254718770397'; // shop phone
+        const contentEl = document.getElementById('content');
+        const id = getParam('product');
+        const phone = '254718770397'; // shop phone
 
-if(!id || !products[id]){
-  contentEl.innerHTML = `<div class="notice"><h2>Product not found</h2><p>The product you requested does not exist.</p><p><a class="back" href="index.html">Back to shop</a></p></div>`;
-} else {
-  const p = products[id];
-  const avgRating = p.rating || 0;
-  const stars = '★'.repeat(Math.round(avgRating)) + '☆'.repeat(5-Math.round(avgRating));
-  const stockClass = p.stock && p.stock > 0 ? 'stock' : 'out-of-stock';
-  const stockText = p.stock && p.stock > 0 ? `In stock (${p.stock})` : 'Out of stock';
+        if (!id || !products[id]) {
+            contentEl.innerHTML = `<div class="notice"><h2>Product not found</h2><p>The product you requested does not exist.</p><p><a class="back" href="index.html">Back to shop</a></p></div>`;
+        } else {
+            const p = products[id];
+            const avgRating = p.rating || 0;
+            const stars = '★'.repeat(Math.round(avgRating)) + '☆'.repeat(5 - Math.round(avgRating));
+            const stockClass = p.stock && p.stock > 0 ? 'stock' : 'out-of-stock';
+            const stockText = p.stock && p.stock > 0 ? `In stock (${p.stock})` : 'Out of stock';
 
-  contentEl.innerHTML = `
+            contentEl.innerHTML = `
     <div class="product-detail">
       <img src="${p.image}" alt="${p.title}">
       <div class="product-info">
@@ -156,13 +351,13 @@ if(!id || !products[id]){
         <div class="description">${p.description}</div>
 
         <div class="options">
-          ${p.variants && p.variants.color && p.variants.color.length ? `<select class="select" id="colorSelect">${p.variants.color.map(c=>`<option value="${c}">${c}</option>`).join('')}</select>` : ''}
-          ${p.variants && p.variants.size && p.variants.size.length ? `<select class="select" id="sizeSelect">${p.variants.size.map(s=>`<option value="${s}">${s}</option>`).join('')}</select>` : ''}
-          <div class="qty">Qty: <input type="number" id="qty" min="1" value="1" ${p.stock && p.stock>0?('max="'+p.stock+'"') : 'disabled'}></div>
+          ${p.variants && p.variants.color && p.variants.color.length ? `<select class="select" id="colorSelect">${p.variants.color.map(c => `<option value="${c}">${c}</option>`).join('')}</select>` : ''}
+          ${p.variants && p.variants.size && p.variants.size.length ? `<select class="select" id="sizeSelect">${p.variants.size.map(s => `<option value="${s}">${s}</option>`).join('')}</select>` : ''}
+          <div class="qty">Qty: <input type="number" id="qty" min="1" value="1" ${p.stock && p.stock > 0 ? ('max="' + p.stock + '"') : 'disabled'}></div>
         </div>
 
         <div class="actions">
-          <a class="btn btn-primary" id="addToCart" href="#" ${p.stock && p.stock>0 ? '' : 'aria-disabled="true"'}>Add to Cart</a>
+          <a class="btn btn-primary" id="addToCart" href="#" ${p.stock && p.stock > 0 ? '' : 'aria-disabled="true"'}>Add to Cart</a>
           <a class="btn btn-secondary" id="buyWhatsapp" href="#">Buy on WhatsApp</a>
           <a class="back" href="index.html">Back to Shop</a>
         </div>
@@ -170,7 +365,7 @@ if(!id || !products[id]){
         <div class="specs">
           <h4>Product details</h4>
           <table>
-            ${Object.keys(p.specs || {}).map(k=>`<tr><td><strong>${k}</strong></td><td>${p.specs[k]}</td></tr>`).join('')}
+            ${Object.keys(p.specs || {}).map(k => `<tr><td><strong>${k}</strong></td><td>${p.specs[k]}</td></tr>`).join('')}
           </table>
           <div class="shipping"><strong>Shipping:</strong> ${p.shipping || 'See shipping options at checkout'}</div>
           <div class="returns"><strong>Returns:</strong> ${p.returns || 'Contact us for returns policy'}</div>
@@ -179,7 +374,7 @@ if(!id || !products[id]){
         <div class="related">
           <h3>Related products</h3>
           <div class="related-list">
-            ${Object.values(products).filter(r=>r.id!==p.id && r.category===p.category).slice(0,3).map(r=>`
+            ${Object.values(products).filter(r => r.id !== p.id && r.category === p.category).slice(0, 3).map(r => `
               <a class="related-item" href="productsdetails.html?product=${r.id}">
                 <img src="${r.image}" alt="${r.title}">
                 <div style="margin-top:8px;font-weight:700">${r.title}</div>
@@ -192,57 +387,58 @@ if(!id || !products[id]){
     </div>
   `;
 
-  // Attach listeners to Buy and Add-to-cart buttons
-  const buyBtn = document.getElementById('buyWhatsapp');
-  const addBtn = document.getElementById('addToCart');
-  const qtyInput = document.getElementById('qty');
-  const colorSelect = document.getElementById('colorSelect');
+            // Attach listeners to Buy and Add-to-cart buttons
+            const buyBtn = document.getElementById('buyWhatsapp');
+            const addBtn = document.getElementById('addToCart');
+            const qtyInput = document.getElementById('qty');
+            const colorSelect = document.getElementById('colorSelect');
 
-  if(buyBtn){
-    buyBtn.addEventListener('click', (e)=>{
-      e.preventDefault();
-      const qty = qtyInput ? qtyInput.value : 1;
-      const color = colorSelect ? colorSelect.value : '';
-      const message = `Hi, I'm interested in ${p.title} (ref: ${p.id})${color?(' - Color: '+color):''} - Qty: ${qty}. Is it available?`;
-      const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
-      window.open(url,'_blank');
-    });
-  }
+            if (buyBtn) {
+                buyBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const qty = qtyInput ? qtyInput.value : 1;
+                    const color = colorSelect ? colorSelect.value : '';
+                    const message = `Hi, I'm interested in ${p.title} (ref: ${p.id})${color ? (' - Color: ' + color) : ''} - Qty: ${qty}. Is it available?`;
+                    const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+                    window.open(url, '_blank');
+                });
+            }
 
-  if(addBtn){
-    addBtn.addEventListener('click',(e)=>{
-      e.preventDefault();
-      if(p.stock && p.stock>0){
-        const qty = qtyInput ? parseInt(qtyInput.value||1,10) : 1;
-        if(p.stock && qty > p.stock){
-          alert('Requested quantity exceeds stock.');
-          return;
+            if (addBtn) {
+                addBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    if (p.stock && p.stock > 0) {
+                        const qty = qtyInput ? parseInt(qtyInput.value || 1, 10) : 1;
+                        if (p.stock && qty > p.stock) {
+                            alert('Requested quantity exceeds stock.');
+                            return;
+                        }
+                        // simple cart stored in localStorage
+                        const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+                        const item = { id: p.id, title: p.title, price: p.price, qty: qty, color: colorSelect ? colorSelect.value : null, image: p.image };
+                        cart.push(item);
+                        localStorage.setItem('cart', JSON.stringify(cart));
+                        if (typeof updateCartCount === 'function') updateCartCount();
+                        alert(`${p.title} added to cart (${qty})`);
+                    } else {
+                        alert('Sorry, this item is out of stock.');
+                    }
+                });
+            }
         }
-        // simple cart stored in localStorage
-        const cart = JSON.parse(localStorage.getItem('cart')||'[]');
-        const item = {id:p.id, title:p.title, price:p.price, qty:qty, color: colorSelect?colorSelect.value:null, image:p.image};
-        cart.push(item);
-        localStorage.setItem('cart', JSON.stringify(cart));
-        if(typeof updateCartCount === 'function') updateCartCount();
-        alert(`${p.title} added to cart (${qty})`);
-      } else {
-        alert('Sorry, this item is out of stock.');
-      }
-    });
-  }
-}
 
-// small helper to update cart count when on pages with header
-function updateCartCount(){
-  const cart = JSON.parse(localStorage.getItem('cart')||'[]');
-  const el = document.getElementById('cart-count');
-  if(el) el.textContent = cart.reduce((s,i)=>s+(i.qty||1),0);
-}
-// keep in sync across tabs
-window.addEventListener('storage', (e)=>{ if(e.key==='cart') updateCartCount(); });
+        // small helper to update cart count when on pages with header
+        function updateCartCount() {
+            const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+            const el = document.getElementById('cart-count');
+            if (el) el.textContent = cart.reduce((s, i) => s + (i.qty || 1), 0);
+        }
+        // keep in sync across tabs
+        window.addEventListener('storage', (e) => { if (e.key === 'cart') updateCartCount(); });
 
-// initialise count on load
-document.addEventListener('DOMContentLoaded', updateCartCount);
-</script>
+        // initialise count on load
+        document.addEventListener('DOMContentLoaded', updateCartCount);
+    </script>
 </body>
+
 </html>

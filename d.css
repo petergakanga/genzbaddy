@@ -1,0 +1,397 @@
+/* Reset & base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: #121212;
+    color: #fff;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
+    background-color: #1f1f1f;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ff5c5c;
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+    gap: 15px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+    color: #ff5c5c;
+}
+
+header .call-number a {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+header .call-number a:hover {
+    color: #ff5c5c;
+}
+
+header .cart-link a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+header .cart-link a:hover {
+    color: #ff5c5c;
+}
+
+/* Hamburger */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 4px;
+}
+
+.hamburger div {
+    width: 22px;
+    height: 3px;
+    background-color: #fff;
+    border-radius: 2px;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 60px 15px;
+    background: url('hero-bg.jpg') center/cover no-repeat;
+}
+
+.hero h1 {
+    font-size: 2rem;
+    margin-bottom: 12px;
+    color: #ff5c5c;
+}
+
+.hero p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.hero button {
+    background-color: #ff5c5c;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.hero button:hover {
+    background-color: #ff2c2c;
+}
+
+/* Section Titles */
+section h2 {
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 30px 0 15px;
+    color: #ff5c5c;
+}
+
+/* Offers & Products */
+.product-slider {
+    display: flex;
+    overflow-x: auto;
+    gap: 15px;
+    padding: 15px;
+    scroll-behavior: smooth;
+}
+
+.product-card {
+    background-color: #1f1f1f;
+    border-radius: 8px;
+    overflow: hidden;
+    min-width: 180px;
+    max-width: 200px;
+    flex: 0 0 auto;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+}
+
+.product-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 92, 92, 0.3);
+}
+
+.product-card img {
+    width: 100%;
+    display: block;
+    height: 140px;
+    object-fit: cover;
+}
+
+.product-card .info {
+    padding: 10px;
+}
+
+.product-card .info h3 {
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+.product-card .info h3 a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.product-card .info p {
+    font-size: 0.8rem;
+    margin: 8px 0;
+    color: #ccc;
+}
+
+.product-card .actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+}
+
+.product-card .actions a {
+    text-decoration: none;
+    font-size: 0.75rem;
+    padding: 5px 8px;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.product-card .actions .buy {
+    background-color: #ff5c5c;
+    color: #fff;
+}
+
+.product-card .actions .buy:hover {
+    background-color: #ff2c2c;
+}
+
+.product-card .actions .whatsapp-product {
+    background-color: #25D366;
+    color: #fff;
+}
+
+.product-card .actions .whatsapp-product:hover {
+    background-color: #1ebe57;
+}
+
+.badge {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    background-color: #ff5c5c;
+    color: #fff;
+    padding: 3px 7px;
+    font-size: 0.7rem;
+    border-radius: 5px;
+}
+
+/* Categories */
+.categories {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+}
+
+.categories button {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: #2a2a2a;
+    color: #fff;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.8rem;
+    transition: background 0.3s;
+}
+
+.categories button.active,
+.categories button:hover {
+    background-color: #ff5c5c;
+}
+
+/* About Section */
+.about {
+    padding: 30px 15px;
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.about p {
+    color: #ccc;
+    font-size: 0.9rem;
+}
+
+/* Newsletter */
+.newsletter {
+    background-color: #1f1f1f;
+    padding: 30px 15px;
+    text-align: center;
+}
+
+.newsletter input[type="email"] {
+    padding: 8px 12px;
+    border-radius: 5px 0 0 5px;
+    border: none;
+    width: 180px;
+    font-size: 0.9rem;
+}
+
+.newsletter button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    background-color: #ff5c5c;
+    color: #fff;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.newsletter button:hover {
+    background-color: #ff2c2c;
+}
+
+/* Footer */
+footer {
+    background-color: #1f1f1f;
+    text-align: center;
+    padding: 15px;
+    font-size: 0.8rem;
+    color: #ccc;
+}
+
+footer a {
+    color: #ff5c5c;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* WhatsApp Floating Button */
+.whatsapp-btn {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    background-color: #25D366;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-decoration: none;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transition: background 0.3s;
+}
+
+.whatsapp-btn:hover {
+    background-color: #1ebe57;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .product-card {
+        min-width: 160px;
+        max-width: 180px;
+    }
+}
+
+@media (max-width: 768px) {
+    header nav {
+        display: none;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #1f1f1f;
+        width: 180px;
+        padding: 15px;
+        border-radius: 8px;
+        flex-direction: column;
+    }
+
+    header nav.active {
+        display: flex;
+    }
+
+    header .hamburger {
+        display: flex;
+    }
+
+    .product-slider {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .product-card {
+        min-width: 140px;
+        max-width: 150px;
+    }
+
+    .product-card img {
+        height: 120px;
+    }
+
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero p {
+        font-size: 0.9rem;
+    }
+
+    .hero button {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+
+    .newsletter input[type="email"] {
+        width: 140px;
+    }
+}
